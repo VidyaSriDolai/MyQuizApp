@@ -18,9 +18,6 @@ An Android Quiz Application developed using Java/Kotlin in Android Studio.
 - Firebase Realtime Database / Firestore
 - XML Layouts
 
-## 📸 Screenshots
-(Add screenshots of your app here)
-
 ## 🔧 How to Run the Project
 
 1. Clone the repository
