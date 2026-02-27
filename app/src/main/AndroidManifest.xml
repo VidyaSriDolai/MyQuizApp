@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.myquizapp">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Moved uses-feature outside application tag -->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MyQuizApp"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:replace="android:theme">
+        <!-- Main Entry Point -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Rest of your application components remain unchanged -->
+        <!-- Category Selection -->
+        <activity
+            android:name=".CategorySelectionActivity"
+            android:exported="false"
+            android:parentActivityName=".LoginActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- Quiz Main Activity -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:parentActivityName=".CategorySelectionActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- Registration -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false"
+            android:parentActivityName=".LoginActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- Password Recovery -->
+        <activity
+            android:name=".ForgotPasswordActivity"
+            android:exported="false"
+            android:parentActivityName=".LoginActivity"
+            android:screenOrientation="portrait"/>
+
+        <!-- Firebase Services -->
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:exported="false">
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+
+    </application>
+
+</manifest>
